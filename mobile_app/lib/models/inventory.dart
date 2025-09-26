@@ -1,5 +1,5 @@
 class Inventory {
-  Map<String, int> _stock = {}; // productId -> quantity
+  final Map<String, int> _stock = {}; // Added 'final' keyword
 
   // Update stock for a product
   void updateStock(String productId, int delta) {

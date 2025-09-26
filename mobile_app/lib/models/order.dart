@@ -1,3 +1,4 @@
+import 'package:logger/logger.dart';
 import 'cart_item.dart';
 import 'user.dart';  
 
@@ -8,6 +9,7 @@ class Order {
   double totalAmount;
   String status;
   DateTime orderDate;
+  final Logger _logger = Logger(); // Add logger instance
 
   Order({
     required this.id,
@@ -21,13 +23,13 @@ class Order {
   // Place order
   void place() {
     status = 'Placed';
-    print('Order $id placed successfully');
+    _logger.i('Order $id placed successfully'); // Changed print to logger
   }
 
   // Cancel order
   void cancel() {
     status = 'Cancelled';
-    print('Order $id cancelled');
+    _logger.w('Order $id cancelled'); // Changed print to logger with warning level
   }
 
   // Get order details

@@ -1,9 +1,12 @@
+import 'package:logger/logger.dart';
+
 class User {
   String id;
   String name;
   String email;
   String password; 
   String phone;
+  final Logger _logger = Logger(); 
 
   User({
     required this.id,
@@ -20,7 +23,7 @@ class User {
 
   // Logout method
   void logout() {
-    print('User $name logged out');
+    _logger.i('User $name logged out'); 
   }
 
   // Register method
@@ -36,12 +39,12 @@ class User {
 
   // View order history
   void viewOrderHistory() {
-    print('Viewing order history for user: $name');
+    _logger.i('Viewing order history for user: $name'); 
   }
 
   // Reset password
   void resetPassword(String newPassword) {
     password = newPassword;
-    print('Password reset successfully for $email');
+    _logger.i('Password reset successfully for $email'); 
   }
 }
